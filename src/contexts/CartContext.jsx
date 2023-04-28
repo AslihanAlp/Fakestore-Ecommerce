@@ -26,14 +26,23 @@ const CartProvider = ({children}) => {
     
    const addToCart = (product, id) => {
     const newItem = {...product, amount: 1}
-  
-    const updatedCart = cart.map(item => item.id === id ? {...item, amount: item.amount + 1} : item)
-    if(updatedCart.find(item => item.id === id)){
-        setCart(updatedCart)
+    const cartItem = cart.find((item) => {
+        return item.id === id
+    })
+    if (cartItem){
+        const newCart = [...cart].map(item => {
+            if (item.id === id) {
+                return {...item, amount: cartItem.amount + 1}
+            } else {
+                return item
+            }
+        })
+        setCart(newCart)
     } else {
         setCart([...cart, newItem])
     }
-}
+
+   }
 
 const removeFromCart = (id) => {
     const updatedCart = cart.filter(item => {
