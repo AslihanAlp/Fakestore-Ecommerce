@@ -42,7 +42,7 @@ const removeFromCart = (id) => {
     setCart(updatedCart)
 }
 
-const clearCart = () => {
+const clearCart = (id) => {
     setCart([])
 }
 
