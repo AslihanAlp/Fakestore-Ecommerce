@@ -28,7 +28,7 @@ const Sidebar = () => {
         <div className="uppercase font-semibold ">
           <span className="mr-2">Total:</span> $ {parseFloat(total).toFixed(2)}
         </div>
-        <div onClick={() => clearCart(id)}
+        <div onClick={() => clearCart()}
         className="w-12 h-12 bg-red-500 text-white flex justify-center items-center cursor-pointer py-4 text-xl">
           <FiTrash2 />
         </div>
